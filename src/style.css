@@ -26,7 +26,7 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #DFD3C3;
+  background: transparent;
   gap: 32px;
 }
 
@@ -89,6 +89,16 @@ body{
 
 }
 
+button{
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.95);
+  background-color: #ff8c00;
+}
+
 .block{
   height: 100px;
   width: 100px;
@@ -96,12 +106,10 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-a{
-  text-decoration: none;
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .b1{
@@ -120,33 +128,6 @@ a{
   background: linear-gradient(180deg, #D2691E, #FF7F50);
 }
 
-.background-grid{
-  position: absolute;
-  pointer-events: none;
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  gap: 16px;
-
-  padding: 32px;
-
-  background-color: #f1f1f1;
-
-  width: 100vw;
-  height: 100vh;
-
-  z-index: -1;
-}
-
-.grid-element{
-  height: auto;
-  width: 100%;
-  border-radius: 15px;
-
-  background-color: gray;
-  opacity: 0.1;
-}
-
 .section{
   display: flex;
   flex-direction: column;
@@ -156,5 +137,29 @@ a{
 }
 
 .sec2{
-  background-color: transparent;
+  background-color: var(--vintage-brown);
+  color: black;
+}
+.sec2 h2{
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-icon{
+  font-size: 5rem;
+}
+
+.icon{
+  font-size: 4rem;
+}
+
+#icon2{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
 }
