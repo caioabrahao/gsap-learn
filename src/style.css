@@ -1,3 +1,14 @@
+:root{
+  --vintage-beige: #F5F5DC;
+  --vintage-olive: #808000;
+  --vintage-brown: #8B4513;
+  --vintage-orange: #D2691E;
+  --vintage-red: #B22222;
+  --vintage-blue: #4682B4;
+  --vintage-green: #556B2F;
+  --vintage-yellow: #FFD700;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -15,7 +26,7 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: transparent;
+  background: #DFD3C3;
   gap: 32px;
 }
 
@@ -31,8 +42,21 @@ body{
 }
 
 .hero h1{
-  font-size: 4rem;
+  font-size: 10rem;
+  line-height: 100%;
   color: #222;
+}
+
+.non-bold{
+  font-weight: 200;
+}
+.bold{
+  font-weight: 700;
+}
+
+::selection {
+  background-color: #488371;
+  color: white;
 }
 
 .box{
@@ -69,31 +93,40 @@ body{
   height: 100px;
   width: 100px;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.purple{
-  background-color: purple;
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
 }
-.indigo{
-  background-color: indigo;
+
+.b1{
+  background: linear-gradient(180deg, #B22222, #8B0000);
 }
-.blue{
-  background-color: blue;
+.b2{
+  background: linear-gradient(180deg, #4682B4, #1E90FF);
 }
-.teal{
-  background-color: teal;
+.b3{
+  background: linear-gradient(180deg, #556B2F, #6B8E23);
 }
-.green{
-  background-color: green;
+.b4{
+  background: linear-gradient(180deg, #808000, #6B8E23);
+}
+.b5{
+  background: linear-gradient(180deg, #D2691E, #FF7F50);
 }
 
 .background-grid{
   position: absolute;
   pointer-events: none;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 16px;
 
   padding: 32px;
 
@@ -112,4 +145,16 @@ body{
 
   background-color: gray;
   opacity: 0.1;
+}
+
+.section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sec2{
+  background-color: transparent;
 }

@@ -1,38 +1,39 @@
 import { gsap } from 'gsap';
+import { TextPlugin } from "gsap/TextPlugin";
+gsap.registerPlugin(TextPlugin);
 
-let tl = gsap.timeline();
-
-tl.to('.box', { x: 300,});
-tl.to('.box', { y: -300,},);
-tl.to('.box', { x: -300,});
-tl.to('.box', { y: 0,});
-tl.to('.box', { x: 0,});
-tl.to('.box', { height: 50, width: 250, onComplete: () => { spawnButton(); },});
-
-function spawnButton(){
-    gsap.set('.box', {display: 'none',});
-    gsap.set('.button', {display: 'block',});
-}
 
 function summonBlocks(){
     gsap.set(".blocks-container", {display: 'flex',});
-    gsap.from(".block", {opacity: 0, rotation: 180, y: 100, duration: 1, stagger: 0.1, ease: "bounce",});
+    gsap.from(".block", {opacity: 0, rotation: 180, y: 100, duration: 1, stagger: 0.1, ease: "bounce", delay: 1});
 }
 
 window.summonBlocks = summonBlocks;
+summonBlocks();
 
-gsap.from(".hero h1", { duration: 1, x: 300, opacity: 0, scale: 0.5, rotation: 360, ease: "elastic",});
-gsap.from(".hero p", { duration: 1, opacity: 0, y: 100, ease: "bounce", delay: .5,});
+//text animation
+gsap.to(".hero h1", { duration: 2, ease: "power1.inout", text: { value: "GSAP Learn", oldClass: "non-bold", newClass: "bold" } });
+gsap.to(".hero p", { duration: 2, ease: "power1.inout", text: { value: "My attempt to learn GSAP!",} });
 
-let tl2 = gsap.timeline({repeat: -1, repeatDelay: 1,});
+
+
+//background grid animation
+
+gsap.from(".grid-element", { opacity: 0, scale: 1.2, duration: 3, ease: "back.out", stagger:{
+    each: 0.1,
+    from: "start",
+    grid: "auto",
+}});
+
+let tl2 = gsap.timeline({repeat: -1, delay: 3});
 
 tl2.to(".grid-element", { scale: .8, duration: 2, ease: "back.out", stagger:{
-    each: 0.2,
+    each: 0.1,
     from: "center",
     grid: "auto",
 }});
 tl2.to(".grid-element", { scale: 1, duration: 2, ease: "back.out", stagger:{
-    each: 0.3,
+    each: 0.1,
     from: "center",
     grid: "auto",
 }});
