@@ -55,8 +55,8 @@ body{
 }
 
 ::selection {
-  background-color: #488371;
-  color: white;
+  background-color: var(--vintage-yellow);
+  color: black;
 }
 
 .box{
@@ -141,8 +141,12 @@ button:active {
   color: black;
 }
 .sec2 h2{
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 600;
+}
+.sec2 p{
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 a{
@@ -152,14 +156,14 @@ a{
 
 .social-icon{
   font-size: 5rem;
+  color: var(--vintage-beige);
 }
 
 .icon{
-  font-size: 4rem;
+  font-size: 6rem;
 }
 
-#icon2{
-  width: 100px;
-  height: 100px;
-  background-color: orange;
+.social-container{
+  display: flex;
+  gap: 64px;
 }

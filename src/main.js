@@ -61,7 +61,6 @@ Draggable.create(".social-icon", {
     onDragEnd: handleDragEnd
 });
 
-
 //inertia functions
 
 let velocity = { x: 0, y: 0 };
@@ -91,5 +90,21 @@ function handleDragEnd() {
 }
 
 
+//social media hover
+function hoverAnim(element){
+    function blockHover(event){
+        gsap.to(event.target, {scale: 1.1, rotation: 360, duration: 1, ease: "elastic"});
+    }
+    document.querySelectorAll(element).forEach(block => {
+        block.addEventListener("mouseenter", blockHover);
+    });
+    
+    function blockHoverOut(event){
+        gsap.to(event.target, {scale: 1, rotation: 0, duration: 0.5, ease: "back.out"});
+    }
+    document.querySelectorAll(element).forEach(block => {
+        block.addEventListener("mouseleave", blockHoverOut);
+    });
+}
 
-
+hoverAnim(".social-icon");
